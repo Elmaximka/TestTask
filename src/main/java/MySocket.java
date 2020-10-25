@@ -2,13 +2,16 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
 
-public class TestSocket implements Runnable {
+public class MySocket implements Runnable {
     private Socket socket;
 
-    public TestSocket(int port) throws IOException {
+    public MySocket(int port) throws IOException {
         socket = new Socket("localhost", port);
     }
 
+    /**
+     * Запуск логики сокета для подключения к серверу и отправки ему сообщения
+     */
     @Override
     public void run() {
         try {
